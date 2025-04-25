@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calcolatrice</title>
+</head>
+<style>
+        /* CSS per il corpo della pagina */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* CSS per il titolo principale */
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+
+        /* CSS per il modulo */
+        form {
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        /* CSS per i campi di input */
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        /* CSS per il pulsante di submit */
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* Effetto hover sul pulsante di submit */
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* CSS per il risultato */
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+
+
+
+<body>
+    <h1>Calcolatrice: Somma e Moltiplicazione</h1>
+
+    <!-- Form per la somma -->
+    <h2>Somma due numeri</h2>
+    <form method="POST">
+        <label for="numero1_somma">Numero 1:</label>
+        <input type="text" name="numero1_somma"><br><br>
+
+        <label for="numero2_somma">Numero 2:</label>
+        <input type="text" name="numero2_somma"><br><br>
+
+        <input type="submit" name="somma" value="Somma">
+    </form>
+
+    {% if risultato_somma is not none %}
+        <h3>Risultato della somma: {{ risultato_somma }}</h3>
+    {% endif %}
+
+    <hr>
+
+    <!-- Form per la moltiplicazione -->
+    <h2>Moltiplica due numeri</h2>
+    <form method="POST">
+        <label for="numero1_moltiplicazione">Numero 1:</label>
+        <input type="text" name="numero1_moltiplicazione"><br><br>
+
+        <label for="numero2_moltiplicazione">Numero 2:</label>
+        <input type="text" name="numero2_moltiplicazione"><br><br>
+
+        <input type="submit" name="moltiplicazione" value="Moltiplica">
+    </form>
+
+    {% if risultato_moltiplicazione is not none %}
+        <h3>Risultato della moltiplicazione: {{ risultato_moltiplicazione }}</h3>
+    {% endif %}
+</body>
+</html>
